@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="de-DE">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Testfallkatalog</title>
+</head>
+
+<body>
+    <h1>Testfallkatalog</h1>
+    {% if testfaelle_liste %}
+    <table>
+        <thead>
+            <tr>
+                <th>Dateiname</th>
+                <th>Beschreibung</th>
+                <th>Snippet</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for testfall in testfaelle_liste %}
+                <tr>
+                    <td>{{testfall.dateiname}}</td>
+                    <td>{{testfall.beschreibung}}</td>
+                    <td><code>{{testfall.snippet}}</code></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>Keine Testfälle da</p>
+    {% endif %}
+</body>
+
+</html>
